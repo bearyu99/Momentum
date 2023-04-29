@@ -12,8 +12,23 @@
     <!-- 모달 -->
     <div
       id="modal"
-      class="fixed w-screen h-screen z-50 bg-gray-900 opacity-80 hidden"
-    ></div>
+      class="fixed flex justify-center items-center w-screen h-screen z-50 bg-neutral-100/60 backdrop-blur"
+    >
+      <form id="login-form" class="relative w-48">
+        <input
+          id="name"
+          type="text"
+          maxlength="8"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-500 appearance-none focus:outline-none focus:ring-0 focus:border-indigo-600 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-indigo-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >이름 입력 후 ⏎ 누르기!
+        </label>
+      </form>
+    </div>
 
     <!-- 메인 -->
     <div
@@ -51,10 +66,10 @@
         </div>
         <!-- 날씨 -->
         <!-- 시계 -->
-        <div class="my-12">
+        <div class="my-16">
           <div
             id="clock"
-            class="relative flex justify-center items-center w-[200px] h-[200px] rounded-full"
+            class="relative flex justify-center items-center w-[200px] h-[200px] bg-neutral-100/60 rounded-full"
           >
             <!-- 12시 -->
             <div
@@ -103,7 +118,7 @@
             >
               00:00
             </div>
-            <div id="clock-meridiem" class="pl-1 pb-2.5 w-fit text-xs">AM</div>
+            <div id="clock-meridiem" class="pl-1 pb-2.5 w-fit text-xs"></div>
           </div>
         </div>
         <!-- To Do List -->
@@ -119,12 +134,12 @@
               <div id="todo-header" class="w-full h-fit cursor-pointer">
                 <div
                   id="todo-expand"
-                  class="flex justify-center text-xl text-neutral-300 rotate-90"
+                  class="flex justify-center text-xl text-neutral-400"
                 >
                   〈
                 </div>
                 <div class="flex flex-col h-16 justify-center">
-                  <p class="text-2xl font-bold">None님</p>
+                  <p id="username-label" class="text-2xl font-bold">None님</p>
                   <span class="text-lg">안녕하세요🤗</span>
                 </div>
               </div>
@@ -138,4 +153,5 @@
   <script src="./src/weather.js"></script>
   <script src="./src/background.js"></script>
   <script src="./src/todo.js"></script>
+  <script src="./src/login.js"></script>
 </html>
