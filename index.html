@@ -21,11 +21,14 @@
       class="flex flex-col w-[370px] h-[750px] bg-white rounded-[50px] drop-shadow-2xl overflow-hidden"
     >
       <!-- 메인 배경 -->
-      <div id="main-bg" class="absolute w-[150%] h-[150%] bg-cover z-0"></div>
+      <div
+        id="main-bg"
+        class="absolute w-[150%] h-[150%] bg-cover blur-sm z-0"
+      ></div>
       <!-- 메인 Wrap -->
       <div
         id="main-inner"
-        class="flex flex-col items-center w-full h-full p-6 z-50 backdrop-blur-sm"
+        class="flex flex-col items-center w-full h-full p-6 z-50"
       >
         <!-- 날씨 -->
         <div
@@ -110,7 +113,7 @@
         >
           <div
             id="todo-content"
-            class="h-full px-6 py-4 bg-neutral-100/80 backdrop-blur-xl rounded-tl-[50px] rounded-tr-[50px]"
+            class="h-full px-6 py-4 bg-neutral-100/80 backdrop-blur-2xl rounded-tl-[50px] rounded-tr-[50px]"
           >
             <div id="todo-content-wrap" class="">
               <div id="todo-header" class="w-full h-fit cursor-pointer">
