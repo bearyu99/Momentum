@@ -2,14 +2,19 @@ const handHour = document.getElementById("clock-hour");
 const handMinute = document.getElementById("clock-minute");
 const handSecond = document.getElementById("clock-second");
 const textClock = document.getElementById("clock-text");
+// const textClockMeridiem;
 
 const clock = () => {
   const date = new Date();
-  const hh = date.getHours(),
-    mm = date.getMinutes(),
-    ss = date.getSeconds();
+  const hh = date.getHours();
+  const mm = date.getMinutes();
+  const ss = date.getSeconds();
 
-  textClock.innerText = `${hh}:${String(mm).padStart(2, "0")}`;
+  const meridiem = Math.sign(hh - 12) < 0 ? "AM" : "PM";
+  const formatHour = String(hh).padStart(2, "0");
+  const formatMinute = String(mm).padStart(2, "0");
+
+  textClock.innerText = `${formatHour}:${formatMinute}`;
 
   handHour.style.transform = `rotateZ(${hh * 30 + mm / 12}deg)`;
   handMinute.style.transform = `rotateZ(${mm * 6}deg)`;
