@@ -2,6 +2,7 @@ const handHour = document.getElementById("clock-hour");
 const handMinute = document.getElementById("clock-minute");
 const handSecond = document.getElementById("clock-second");
 const textClock = document.getElementById("clock-text");
+const meridiemElem = document.getElementById("clock-meridiem");
 // const textClockMeridiem;
 
 const clock = () => {
@@ -15,6 +16,7 @@ const clock = () => {
   const formatMinute = String(mm).padStart(2, "0");
 
   textClock.innerText = `${formatHour}:${formatMinute}`;
+  meridiemElem.innerText = meridiem;
 
   handHour.style.transform = `rotateZ(${hh * 30 + mm / 12}deg)`;
   handMinute.style.transform = `rotateZ(${mm * 6}deg)`;
