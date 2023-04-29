@@ -1,14 +1,6 @@
-#clock,
-#clock-12,
-#clock-3,
-#clock-6,
-#clock-9 {
+#clock {
   box-shadow: -6px -6px 16px white, 6px 6px 16px hsla(240, 30%, 86%, 1),
     inset 6px 6px 16px hsla(240, 30%, 86%, 1), inset -6px -6px 16px white;
-}
-
-#weather-icon {
-  /* box-shadow: 6px 0 12px 2px rgb(0 0 0 / 0.1); */
 }
 
 #todo-frame {
@@ -17,4 +9,20 @@
 
 #todo-frame.pos {
   bottom: -420px;
+}
+
+#todo-expand {
+  animation: bounce 1.4s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%) rotateZ(90deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0) rotateZ(90deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
