@@ -1,0 +1,20 @@
+#clock,
+#clock-12,
+#clock-3,
+#clock-6,
+#clock-9 {
+  box-shadow: -6px -6px 16px white, 6px 6px 16px hsla(240, 30%, 86%, 1),
+    inset 6px 6px 16px hsla(240, 30%, 86%, 1), inset -6px -6px 16px white;
+}
+
+#weather-icon {
+  /* box-shadow: 6px 0 12px 2px rgb(0 0 0 / 0.1); */
+}
+
+#todo-frame {
+  transition: all 0.6s ease-out;
+}
+
+#todo-frame.pos {
+  bottom: -420px;
+}
