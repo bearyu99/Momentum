@@ -2,7 +2,7 @@
 
 ![main-img](./assets/main.png)
 
-## Feature
+## Features
 
 1. 로그인
 2. 현재 날씨 / 위치
