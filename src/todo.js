@@ -25,13 +25,13 @@ function paintToDoItem(newToDoObj) {
   // li
   const todoItem = document.createElement("li");
   todoItem.id = newToDoObj.id;
-  todoItem.className = "relative flex items-center mb-3 mx-2";
+  todoItem.className = "relative flex items-center mb-3 mx-1";
   // checkbox
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
   checkBox.id = newToDoObj.id / 1000;
   checkBox.className =
-    "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded";
+    "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded hidden";
   checkBox.addEventListener("click", () => {
     label.classList.toggle("line-through");
   });
@@ -42,8 +42,8 @@ function paintToDoItem(newToDoObj) {
   label.className = "ml-2 text-sm font-medium text-gray-900";
   // button
   const button = document.createElement("button");
-  button.className = "absolute right-2";
-  button.innerText = "🗑️";
+  button.className = "absolute right-2 text-gray-400";
+  button.innerText = "⌫";
   button.addEventListener("click", deleteToDo);
   // checkbox, label, button --append--> li --append--> ul
   todoItem.appendChild(checkBox);
@@ -60,9 +60,27 @@ function submitToDo(e) {
     text: newToDo,
     id: Date.now(),
   };
-  tempToDos.push(newToDoObj);
-  paintToDoItem(newToDoObj);
-  saveToDos();
+
+  // To Do List 9개 초과 시 추가 등록 불가
+  if (tempToDos.length + 1 > 9) {
+    const todoInputLabel = document.querySelector("form#todo-input-form label");
+    todoInput.classList.toggle("ignore");
+    todoInput.classList.add("focus:border-red-600");
+    todoInputLabel.innerText = "9개 이상 추가할 수 없습니다!";
+    todoInputLabel.classList.add("peer-focus:text-red-600");
+    setTimeout(() => {
+      todoInput.classList.toggle("ignore");
+      todoInput.classList.remove("focus:border-red-600");
+      todoInputLabel.innerText = "오늘 할 일을 적고 ⏎를 누르세요!";
+      todoInputLabel.classList.remove("peer-focus:text-red-600");
+    }, 800);
+    return;
+  } else {
+    // 9개 이하면 정상 등록
+    tempToDos.push(newToDoObj);
+    paintToDoItem(newToDoObj);
+    saveToDos();
+  }
 }
 
 function saveToDos() {
