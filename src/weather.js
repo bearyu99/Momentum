@@ -112,6 +112,7 @@ function weatherPrint(data) {
 
   // 날씨 로딩 텍스트 제거
   weatherDetail.removeChild(weatherWaitingText);
+  weatherIcon.innerText = "";
 
   // 날씨 정보 추가
   weatherDetail.appendChild(cityText);
@@ -122,5 +123,7 @@ function weatherPrint(data) {
 const weatherWaitingText = document.createElement("span");
 weatherWaitingText.innerText = `날씨를 불러오고 있습니다.`;
 weatherDetail.appendChild(weatherWaitingText);
+
+weatherIcon.innerText = "•••";
 
 navigator.geolocation.getCurrentPosition(weatherLoad, weatherErrPrint);
