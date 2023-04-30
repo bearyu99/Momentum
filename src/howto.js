@@ -35,7 +35,7 @@ form.addEventListener("submit", () => {
             element.addEventListener("click", () => {
               if (step === 3) {
                 text.innerHTML =
-                  "조아요! 날씨 아이콘을 5초간 누르면 모든 내용을 초기화할 수 있어요<br />마지막으로 아래 버튼을 눌러서 HOW-TO-USE를 마칠게요!<br />오늘도 좋은 하루 보내시길 바랄게요 🤗";
+                  "굳! 날씨 아이콘을 5초간 누르면 모든 내용을 초기화할 수 있어요<br />마지막으로 아래 버튼을 눌러서 HOW-TO-USE를 마칠게요!<br />오늘도 좋은 하루 보내시길 바랄게요 🤗";
                 pingIcon.classList.remove("hidden");
               }
             });
