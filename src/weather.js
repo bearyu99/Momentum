@@ -94,6 +94,9 @@ function weatherErrPrint() {
   weatherText.innerText = "위치를 확인할 수 없습니다.";
   weatherDetail.appendChild(weatherText);
   weatherIcon.innerText = "?";
+
+  // 날씨 로딩 텍스트 제거
+  weatherDetail.removeChild(weatherWaitingText);
 }
 
 function weatherPrint(data) {
@@ -108,7 +111,6 @@ function weatherPrint(data) {
   weatherText.innerText = weatherState;
 
   // 날씨 로딩 텍스트 제거
-  // weatherWaitingText.remove();
   weatherDetail.removeChild(weatherWaitingText);
 
   // 날씨 정보 추가
