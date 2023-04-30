@@ -32,14 +32,25 @@ function paintToDoItem(newToDoObj) {
   checkBox.id = newToDoObj.id / 1000;
   checkBox.className =
     "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded hidden";
-  checkBox.addEventListener("click", () => {
-    label.classList.toggle("line-through");
+  checkBox.addEventListener("click", (event) => {
+    if (newToDoObj.checked) {
+      label.classList.toggle("line-through");
+      newToDoObj.checked = false;
+    } else {
+      label.classList.toggle("line-through");
+      newToDoObj.checked = true;
+    }
+    saveToDos();
   });
   // label
   const label = document.createElement("label");
   label.innerText = newToDoObj.text;
   label.htmlFor = newToDoObj.id / 1000;
-  label.className = "ml-2 text-sm font-medium text-gray-900";
+  label.className = "ml-2 text-sm font-medium text-gray-900 cursor-pointer";
+
+  if (newToDoObj.checked) {
+    label.classList.toggle("line-through");
+  }
   // button
   const button = document.createElement("button");
   button.className = "absolute right-2 text-gray-400";
@@ -59,6 +70,7 @@ function submitToDo(e) {
   const newToDoObj = {
     text: newToDo,
     id: Date.now(),
+    checked: false,
   };
 
   // To Do List 9개 초과 시 추가 등록 불가
