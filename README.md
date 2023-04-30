@@ -2,6 +2,14 @@
 
 ![main-img](./assets/main.png)
 
+## Feature
+
+1. 로그인
+2. 현재 날씨 / 위치
+3. 모던 아날로그 시계
+4. To-Do 추가 / 체크 / 삭제
+5. 데이터 전체 초기화
+
 ## How to use
 
 ![img-1](./assets/how-to-1.png)
