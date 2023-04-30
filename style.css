@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+}
+
+body {
+  font-family: "San Francisco";
+}
+
 #clock {
   box-shadow: -6px -6px 16px white, 6px 6px 16px hsla(240, 30%, 86%, 1),
     inset 6px 6px 16px hsla(240, 30%, 86%, 1), inset -6px -6px 16px white;
