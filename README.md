@@ -1,4 +1,4 @@
-# [To Do List](https://bearyu99.github.io/To-Do-List)
+# [To Do List](https://bearyu99.github.io/to-do-list)
 
 ![main-img](./assets/main.png)
 
