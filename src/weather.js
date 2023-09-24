@@ -1,4 +1,4 @@
-const API_KEY = "3b3e4388432d1acebb97b817feabc5c5";
+const API_KEY = "";
 const weatherIcon = document.getElementById("weather-icon");
 const weatherDetail = document.querySelector("#weather-detail > div");
 const weatherDescKo = {
