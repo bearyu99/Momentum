@@ -61,6 +61,8 @@ function isHide() {
   const howtoDiv = document.getElementById("how-to");
   if (hide) {
     howtoDiv.classList.remove("md:block");
+    document.body.classList.remove('justify-evenly')
+    document.body.classList.add('justify-center')
   } else {
   }
 }
